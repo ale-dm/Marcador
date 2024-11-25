@@ -1,0 +1,186 @@
+/* Reset general */
+body, h1, h2, h3, ul, li, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f7fc;
+    padding: 40px;
+    color: #333;
+}
+
+/* Estilos del header */
+header {
+    background: linear-gradient(135deg, #3B82F6, #60A5FA); /* Degradado suave entre azul */
+    color: white;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.logo i {
+    font-size: 1.8em; /* Tamaño de icono ajustado */
+}
+
+.subheader {
+    font-size: 1.1em;
+    color: #ecf0f1;
+}
+
+/* Estilos para los entornos */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 45%; /* Los bloques ahora son un poco más estrechos */
+    margin-left: 5%; /* Alineación a la izquierda con margen */
+    padding-top: 40px;
+}
+
+.environment {
+    width: 100%;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.environment:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.environment-header {
+    background: linear-gradient(135deg, #3B82F6, #60A5FA); /* Degradado azul suave */
+    color: white;
+    padding: 20px 25px;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-bottom: 2px solid #60A5FA;
+    border-radius: 12px;
+}
+
+.environment-header:hover {
+    background: linear-gradient(135deg, #60A5FA, #3B82F6); /* Invertir el degradado */
+    transform: scale(1.05);
+}
+
+.environment-header i {
+    font-size: 1.3em; /* Reducido el tamaño del icono */
+}
+
+.environment-header span {
+    font-size: 1.3em;
+}
+
+/* Estilos del contenido */
+.environment-content {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 25px;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    background: #f9f9f9; /* Fondo gris claro */
+    border-radius: 12px;
+}
+
+.environment.active .environment-content {
+    max-height: 500px;
+    opacity: 1;
+    padding: 25px;
+}
+
+.environment-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.environment-content li {
+    margin: 15px 0;
+}
+
+.environment-content a {
+    text-decoration: none;
+    color: #1E3A8A; /* Enlaces en azul oscuro */
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.environment-content a:hover {
+    color: #3B82F6; /* Azul más brillante al pasar el ratón */
+}
+
+.environment-content a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1E3A8A; /* Línea debajo del enlace */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.environment-content a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Estilo para el pie de página */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #777;
+    font-size: 1em;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 0.9em;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+        margin-left: 5%; /* Ajuste para pantallas pequeñas */
+    }
+
+    .environment-header {
+        font-size: 1.1em;
+    }
+
+    .environment-header i {
+        font-size: 1.5em;
+    }
+}
